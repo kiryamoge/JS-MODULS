@@ -1,8 +1,9 @@
-class Button {
+  class Button {
     constructor(id, label, user){
       this.id = id;
       this.label = label;
       this.user = user;
+      this.onClick = this.onClick.bind(this);
     }
   
     onClick(){
@@ -13,7 +14,7 @@ class Button {
       const button = document.createElement('button');
       button.id = this.id;
       button.textContent = this.label;
-      button.addEventListener('click', this.onClick.bind(this));
+      button.addEventListener('click', this.onClick);
       return button;
     }
   }
